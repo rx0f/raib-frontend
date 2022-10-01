@@ -7,9 +7,13 @@ const Form = () => {
 
   const handleClick = () => {
     axios
-      .post("https://kerberos-backend.herokuapp.com/", {
-        url: inputRef.current.value,
-      })
+      .post(
+        "https://kerberos-backend.herokuapp.com/",
+        {
+          url: inputRef.current.value,
+        },
+        { headers: { "Access-Control-Allow-Origin": "*" } }
+      )
       .then((res) => {
         console.log(res);
       })
