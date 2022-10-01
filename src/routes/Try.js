@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import HeroImage from '../components/HeroImage'
 import Form from '../components/Form'
 
-const Pricing = () => {
+const Try = () => {
     return (
         <div>
             <Navbar />
@@ -13,4 +13,4 @@ const Pricing = () => {
     )
 }
 
-export default Pricing
+export default Try
