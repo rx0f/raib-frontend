@@ -1,16 +1,29 @@
-import React from 'react'
-import './FormStyles.css'
+import React, { useRef } from "react";
+import "./FormStyles.css";
+import axios from "axios";
 
 const Form = () => {
-    return (
-        <div className='form'>
-            <form>
-                <label>Link to the photo on Juno website</label>
-                <input type='text'></input>
-                <button className='btn'>Submit</button>
-            </form>
-        </div>
-    )
-}
+  const inputRef = useRef(null)
 
-export default Form
+  const handleClick = () => {
+    axios.post("https://kerberos-backend.herokuapp.com/", {
+        url: inputRef.current.value
+    }).then(res => {
+        console.log(res)
+    }).catch(err => {
+        console.log(err)
+    })
+  }
+
+  return (
+    <div className="form">
+      <form>
+        <label>Link to the photo on Juno website</label>
+        <input ref={inputRef} type="text"></input>
+        <button className="btn" onClick={handleClick}>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Form;

@@ -13,7 +13,7 @@ const Video = () => {
       <div className="content">
         <div>
           <h1>Kerberos</h1>
-          <p>World's first civilian space travel.</p>
+          <p >Let's explore Jupiter planet.</p>
           <div>
             <Link to="/try" className="btn btn-light">
               Try it
